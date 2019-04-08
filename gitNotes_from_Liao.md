@@ -147,7 +147,7 @@ $ git clone https://github.com/usern/repositoryname.git
 ```
 
 ### 分支
-#### 创建分支
+#### 在当前分支创建分支
 ```bash
 $ git branch <branchname>
 ```
@@ -172,10 +172,16 @@ $ git checkout -b <branchname>
 $ git merge <branchname>
 ```
 
-#### 删除分支
+#### 删除本地分支
 ```bash
 $ git branch -d <branchname>
 ```
+
+#### 删除远程分支
+```bash
+$ git push <remote_name> --delete <branch_name>
+```
+
 #### 查看分支合并图
 ```bash
 $ git log --graph
@@ -220,7 +226,7 @@ $ git checkout -b branch-name origin/branch-name，
 ```bash
 $ git branch --set-upstream branch-name origin/branch-name；
 ```
-#### 从本地推送分支
+#### 从本地推送到指定远程分支
 ```bash
 $ git push origin branch-name
 ```
@@ -233,7 +239,7 @@ $ git pull
 
 ### 标签
 tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。
-#### 新建一个标签
+#### 为当前commit（HEAD）新建一个标签
 ```bash
 $ git tag <tagname>
 ```
@@ -267,4 +273,5 @@ $ git tag -d <tagname>
 #### 删除一个远程标签
 ```bash
 $ git push origin :refs/tags/<tagname>
+$ git push --delete origin [tag]
 ```
